@@ -14,14 +14,15 @@ class Accueil_View(QWidget):
         self.selection_compartiment = Selection_compartiment_View()
 #        self.calendrier = calendrier(self, calendrierController)     
   
-        self.resize(300,200)
+        self.resize(300,500)
+        self.setStyleSheet("background-color: #B2DEE6")
 
         self.logo = QLabel(self)
         self.pixmap = QPixmap('logo2.png')
         self.logo.setPixmap(self.pixmap.scaled(100,100))
         self.logo.setAlignment(Qt.AlignCenter)
 
-        self.nom_plateforme = QLabel("e-pilulier \n")
+        self.nom_plateforme = QLabel("e-pilulier \n \n")
         self.nom_plateforme.setAlignment(Qt.AlignCenter)
         self.nom_plateforme.setStyleSheet("color : #0B848C")
         self.message_bienvenue = QLabel("Bienvenue sur l'application du pilulier")
@@ -29,7 +30,10 @@ class Accueil_View(QWidget):
 
         self.programmer = QPushButton("Programmer les compartiments")
         self.programmer.setStyleSheet("background-color : #0B848C ; border-radius: 10% ; padding: 10px ; color : white")
-    
+
+        self.ajout_medicament = QPushButton("Ajouter un autre médicament")
+        self.ajout_medicament.setStyleSheet("background-color : #0B848C ; border-radius: 10% ; padding: 10px ; color : white")
+
         self.calendrier = QPushButton("Calendrier")
         self.calendrier.setStyleSheet("background-color : #0B848C ; border-radius: 10% ; padding: 10px ; color : white")
 
@@ -46,6 +50,7 @@ class Accueil_View(QWidget):
         h_box.addWidget(self.nom_plateforme)
         h_box.addWidget(self.message_bienvenue)
         h_box.addWidget(self.programmer)
+        h_box.addWidget(self.ajout_medicament)
         h_box.addWidget(self.calendrier)
         h_box.setAlignment(Qt.AlignCenter)
 
